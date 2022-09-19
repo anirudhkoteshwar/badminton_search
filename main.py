@@ -1,1 +1,6 @@
-from selenium import webdriver as wbdr
+
+
+
+from selenium import webdriver
+
+driver = webdriver.Firefox()
