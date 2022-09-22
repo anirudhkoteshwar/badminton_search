@@ -6,7 +6,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
 import os 
 import time 
@@ -32,13 +31,13 @@ searchbutton.click()
 
 #find all court names
 entries = driver.find_elements(By.CLASS_NAME, 'hfpxzc')
-
+entrybar = driver.find_element(By.CLASS_NAME, "e07Vkf kA9KIf")
 for entry in entries:
     name = entry.get_attribute("aria-label")
     with open("courts.txt", 'a') as file:
         file.write(f"{name}\n")
 
-
+time.sleep(20)    
 #terminate the session
 driver.close() 
 driver.quit() 
